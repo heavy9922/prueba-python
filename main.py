@@ -41,7 +41,7 @@ def add_p():
     cursor.execute('select * from talla;')
     data2 = cursor.fetchall()
     return render_template('form_product.html', marcas = data, tallas = data2)
-#enviar datos al la DB
+#enviar datos a la DB
 @app.route('/addP', methods=['POST'])
 def addP():
     if request.method == 'POST':
