@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-md-4 offset-md-4 pt-4">
+    <div class="card card-body">
+        <fieldset>
+            <legend>Nueva marca</legend>
+            <form action="/addM" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="marca" id="marca" placeholder="Ingrese la marca">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+{% endblock %}

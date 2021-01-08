@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-md-4 offset-md-4 pt-4">
+    <div class="card card-body">
+        <fieldset>
+            <legend>Actualizacion de producto</legend>
+            <form action="/updateP/{{product.0}}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="ndp" id="ndp"  value="{{product.1}}">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="marca" id="marca">
+                    <option value="{{product.2}}">{{product.3}}</option>
+                    {% for marca in marcas %}
+                    <option value="{{marca.0}}">{{marca.1}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="talla" id="talla">
+                    <option value="{{product.4}}">{{product.5}}</option>
+                    {% for talla in tallas %}
+                    <option value="{{talla.0}}">{{talla.1}}</option>
+                    {% endfor %}cantidad
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" name="cantidad" id="cantidad" value="{{product.6}}" >
+                </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="fecha" id="fecha" value="{{product.7}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="observaciones" id="observaciones" value="{{product.8}}" >
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning btn-block">Actualizar</button>
+                </div>
+            </form>
+        </fieldset>
+        
+    </div>
+</div>
+{% endblock %}

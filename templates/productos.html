@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="col-md-12 offset-md-1">
+    <a href="/add_p"><span class="fas fa-folder-plus h1 text-primary"></span> </a>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <table id="datat" class="table table-responsive">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre del producto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Talla</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Observaciones</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody class="thead-light">
+            {% for product in products  %}
+        <tr>
+            <th scope="row">{{product.0}}</th>
+            <td class="bg-light">{{product.1}}</td>
+            <td class="bg-light">{{product.2}}</td>
+            <td class="bg-light">{{product.3}}</td>
+            <td class="bg-light">{{product.4}}</td>
+            <td class="bg-light">{{product.5}}</td>
+            <td class="bg-light">{{product.6}}</td>
+            <td class="bg-light"><a href="/edit_p/{{product.0}}" class="btn btn-warning"><i class='fas fa-pencil-alt text-white' style="cursor:pointer;"></i></a></td>
+            <td class="bg-light"><a href="/deleteP/{{product.0}}" class="btn btn-danger btn-delete"><i class='far fa-trash-alt text-white' style="cursor:pointer;"></i></a></td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
