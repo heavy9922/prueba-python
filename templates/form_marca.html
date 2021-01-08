@@ -5,9 +5,11 @@
     <div class="card card-body">
         <fieldset>
             <legend>Nueva marca</legend>
-            <form action="/addM" method="post">
+            <form action="/addM" method="post" class="needs-validation" novalidate >
                 <div class="form-group">
-                    <input type="text" class="form-control" name="marca" id="marca" placeholder="Ingrese la marca">
+                    <input type="text" class="form-control" name="marca" id="marca" placeholder="Ingrese la marca" required>
+                    <div class="valid-feedback"> OK valido!</div>
+                    <div class="invalid-feedback">complete el campo</div>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
@@ -16,4 +18,5 @@
         </fieldset>
     </div>
 </div>
+<script src="../static/js/form_validation.js"></script>
 {% endblock %}

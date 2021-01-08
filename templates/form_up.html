@@ -5,12 +5,12 @@
     <div class="card card-body">
         <fieldset>
             <legend>Actualizacion de producto</legend>
-            <form action="/updateP/{{product.0}}" method="post">
+            <form action="/updateP/{{product.0}}" method="post"  >
                 <div class="form-group">
-                    <input type="text" class="form-control" name="ndp" id="ndp"  value="{{product.1}}">
+                    <input type="text" class="form-control" name="ndp" id="ndp"  value="{{product.1}}" required>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" name="marca" id="marca">
+                    <select class="form-control" name="marca" id="marca" required>
                     <option value="{{product.2}}">{{product.3}}</option>
                     {% for marca in marcas %}
                     <option value="{{marca.0}}">{{marca.1}}</option>
@@ -18,7 +18,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" name="talla" id="talla">
+                    <select class="form-control" name="talla" id="talla" required>
                     <option value="{{product.4}}">{{product.5}}</option>
                     {% for talla in tallas %}
                     <option value="{{talla.0}}">{{talla.1}}</option>
@@ -26,10 +26,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" name="cantidad" id="cantidad" value="{{product.6}}" >
+                    <input type="number" class="form-control" name="cantidad" id="cantidad" value="{{product.6}}" required>
                 </div>
                 <div class="form-group">
-                    <input type="date" class="form-control" name="fecha" id="fecha" value="{{product.7}}">
+                    <input type="date" class="form-control" name="fecha" id="fecha" value="{{product.7}}" required>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="observaciones" id="observaciones" value="{{product.8}}" >
